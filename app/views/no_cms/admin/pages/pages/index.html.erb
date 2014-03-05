@@ -1,2 +1,7 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/no_cms/pages/index.html.erb</p>
+<h1><%= t('.title') %></h1>
+
+<% unless @roots.blank? %>
+  <ul>
+    <%= render partial: 'page_listing', collection: @roots, as: 'page' %>
+  </ul>
+<% end %>
