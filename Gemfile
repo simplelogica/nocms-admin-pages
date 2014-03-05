@@ -15,6 +15,12 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
+
+group :development, :test do
+  gem 'faker'
+  gem 'carrierwave' # For development and testing purposes (Images)
+end
+
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl'
