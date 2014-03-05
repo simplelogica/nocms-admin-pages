@@ -1,3 +1,5 @@
+require 'nocms_pages'
+
 module NoCms
   module Admin
     module Pages

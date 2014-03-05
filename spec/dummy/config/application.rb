@@ -1,14 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "pages"
+require "nocms_admin_pages"
 
 module Dummy
   class Application < Rails::Application
