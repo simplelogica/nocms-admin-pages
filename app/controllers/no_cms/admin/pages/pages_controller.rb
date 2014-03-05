@@ -1,4 +1,4 @@
-require_dependency "no_cms/application_controller"
+require_dependency "no_cms/admin/pages/application_controller"
 
 module NoCms::Admin::Pages
   class PagesController < ApplicationController
