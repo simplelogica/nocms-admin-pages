@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  no_cms:
+    pages:
+      blocks:
+        layouts:
+          logo-caption: Image and caption
+          title-3_columns: 3 columns and title

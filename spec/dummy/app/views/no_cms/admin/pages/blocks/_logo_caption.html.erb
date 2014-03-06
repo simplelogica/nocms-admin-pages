@@ -1,0 +1,8 @@
+<%= f.label :caption %>
+<%= f.text_field :caption %>
+
+<%= f.fields_for f.object.logo do |f_logo|%>
+  <%= image_tag(f_logo.object.logo_url) if f_logo.object.logo? %>
+  <%= f_logo.file_field :logo %>
+  <%= f_logo.hidden_field :logo_cache %>
+<% end %>
