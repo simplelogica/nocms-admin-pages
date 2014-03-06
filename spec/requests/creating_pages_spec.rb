@@ -25,6 +25,7 @@ describe NoCms::Admin::Pages do
     end
 
     it "should create a new accessible page" do
+      visit page_path
       expect(subject.status_code).to eq 200
       expect(subject).to have_text page_title
     end
