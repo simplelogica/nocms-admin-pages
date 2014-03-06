@@ -1,2 +1,5 @@
-<h1>Pages#new</h1>
-<p>Find me in app/views/no_cms/pages/new.html.erb</p>
+<%= form_for @page do |f| %>
+  <%= render 'content_fields', f: f %>
+
+  <%= f.submit t('.submit') %>
+<% end %>
