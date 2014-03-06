@@ -7,3 +7,6 @@ en:
             submit: 'Send'
           new:
             submit: 'Send'
+          page_listing_item:
+            destroy: Remove
+            edit: Edit
