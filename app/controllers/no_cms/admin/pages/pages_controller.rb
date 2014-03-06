@@ -3,7 +3,7 @@ require_dependency "no_cms/admin/pages/application_controller"
 module NoCms::Admin::Pages
   class PagesController < ApplicationController
 
-    before_filter :load_page, only: [:edit, :update]
+    before_filter :load_page, only: [:edit, :update, :destroy]
 
     def index
       @roots = NoCms::Pages::Page.roots
@@ -28,6 +28,11 @@ module NoCms::Admin::Pages
       else
         render :new
       end
+    end
+
+    def destroy
+      @page.destroy
+      redirect_to pages_path
     end
 
     private
