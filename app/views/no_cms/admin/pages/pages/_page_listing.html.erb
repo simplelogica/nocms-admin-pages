@@ -1,9 +1,3 @@
-<li>
-  <%= page.title %>
-  <%= link_to t('.edit'), edit_page_path(page)%>
-  <% unless page.children.blank? %>
-  <ul>
-    <%= render partial: 'page_listing', collection: page.children, as: 'page' %>
-  </ul>
-  <% end %>
-</li>
+<ul>
+  <%= yield %>
+</ul>
