@@ -1,0 +1,7 @@
+en:
+  no_cms:
+    admin:
+      pages:
+        pages:
+          new:
+            submit: 'Send'
