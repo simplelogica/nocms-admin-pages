@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
+  mount NoCms::Admin::Pages::Engine => "/admin"
   mount NoCms::Pages::Engine => "/"
-  mount NoCms::Admin::Pages::Engine => "/admin/pages"
 end
