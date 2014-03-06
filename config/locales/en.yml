@@ -3,5 +3,7 @@ en:
     admin:
       pages:
         pages:
+          edit:
+            submit: 'Send'
           new:
             submit: 'Send'
