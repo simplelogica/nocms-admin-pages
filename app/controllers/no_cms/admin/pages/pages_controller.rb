@@ -22,6 +22,12 @@ module NoCms::Admin::Pages
       end
     end
 
+    def edit
+      NoCms::Pages.block_layouts.each do |name, _|
+        @page.blocks.build layout: name
+      end
+    end
+
     def update
       if @page.update_attributes page_params
         redirect_to pages_path
