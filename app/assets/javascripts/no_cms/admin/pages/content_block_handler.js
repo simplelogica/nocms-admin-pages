@@ -17,6 +17,15 @@ NoCMS.ContentBlockHandler = function() {
     that.createBlock();
   });
 
+  block_placeholder.on('change', '.block_layout_selector', function(e){
+    that.updateBlock($(this).parent('.block'), $(this).val());
+  });
+
+  this.updateBlock = function(block, new_layout){
+    new_template = block_templates.filter('#new_content_block_' + new_layout)
+    block.find('.layout_fields').html(new_template.find('.layout_fields').html());
+    this.modifyInputNames(block, block.find('.block_layout_selector').attr('id').match(/_([0-9]*)_/)[1]);
+  }
 
   this.createBlock = function(){
     new_block = default_layout_block.clone();
