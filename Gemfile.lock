@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/simplelogica/nocms-pages.git
-  revision: 2aedb5929f953fd5c8a59192e2c26626fcbfa156
+  revision: 4e59ebb0e39b79854294ed2383c57d9945b25aa9
   branch: master
   specs:
     nocms-pages (0.0.1)
