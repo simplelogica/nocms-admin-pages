@@ -1,0 +1,6 @@
+<%= f.label :layout %>
+<%= f.select :layout, NoCms::Pages.block_layouts.map{|name, _| [ I18n.t("no_cms.pages.blocks.layouts.#{name}"), name ]}, {}, class: 'block_layout_selector' %>
+<div class='layout_fields'>
+<%= render "no_cms/admin/pages/blocks/#{f.object.template}" , f: f %>
+</div>
+

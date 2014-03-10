@@ -1,5 +1,6 @@
 <%= form_for @page do |f| %>
   <%= render 'content_fields', f: f %>
+  <%= render 'no_cms/admin/pages/blocks/index', f: f %>
 
   <%= f.submit t('.submit') %>
 <% end %>

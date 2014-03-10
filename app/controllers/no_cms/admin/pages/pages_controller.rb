@@ -22,6 +22,12 @@ module NoCms::Admin::Pages
       end
     end
 
+    def edit
+      NoCms::Pages.block_layouts.each do |name, _|
+        @page.blocks.build layout: name
+      end
+    end
+
     def update
       if @page.update_attributes page_params
         redirect_to pages_path
@@ -42,7 +48,9 @@ module NoCms::Admin::Pages
     end
 
     def page_params
-      params.require(:page).permit(:title, :body)
+      page_params = params.require(:page).permit(:title, :body, :parent_id)
+      page_params.merge!(blocks_attributes: params[:page][:blocks_attributes]) unless params[:page][:blocks_attributes].blank?
+      page_params
     end
 
   end

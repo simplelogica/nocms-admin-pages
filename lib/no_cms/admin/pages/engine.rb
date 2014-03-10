@@ -1,4 +1,5 @@
 require 'nocms_pages'
+require 'jquery-rails'
 
 module NoCms
   module Admin

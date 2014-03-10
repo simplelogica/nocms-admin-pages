@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe NoCms::Admin::Pages do
 
-  context "when removing a page" do
+  context "when removing a page", js: true do
 
     let(:nocms_page) { create :nocms_page }
 
@@ -23,7 +23,8 @@ describe NoCms::Admin::Pages do
     end
 
     it "page should not be accessible" do
-      expect{visit nocms_page.path}.to raise_exception ActionController::RoutingError
+      visit nocms_page.path
+      expect(subject.status_code).to eq 404
     end
 
   end
