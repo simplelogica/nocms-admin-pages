@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe NoCms::Admin::Pages do
 
-  context "when creating a new page" do
+  context "when creating a new page", js: true do
 
     let(:page_title) { Faker::Lorem.sentence }
     let(:page_path) { "/#{page_title.parameterize}" }

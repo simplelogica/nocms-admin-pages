@@ -2,6 +2,9 @@ en:
   no_cms:
     admin:
       pages:
+        blocks:
+          index:
+            new_block: Create new block
         pages:
           edit:
             submit: 'Send'
