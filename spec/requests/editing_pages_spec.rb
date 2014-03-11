@@ -40,4 +40,46 @@ describe NoCms::Admin::Pages do
     end
 
   end
+
+
+  context "when using different buttons to submit" do
+    let(:nocms_page) { create :nocms_page }
+
+    subject { page }
+
+    before do
+      visit no_cms_admin_pages.edit_page_path(nocms_page)
+    end
+
+    context "when submit and new" do
+      before do
+        click_button(I18n.t('no_cms.admin.pages.pages.toolbar.submit_and_new'))
+      end
+
+      it "should show the new form" do
+        expect(current_path).to eq no_cms_admin_pages.new_page_path
+      end
+    end
+
+    context "when submit and hide" do
+      before do
+        click_button(I18n.t('no_cms.admin.pages.pages.toolbar.submit_and_hide'))
+      end
+
+      it "should show the new form" do
+        expect(current_path).to eq no_cms_admin_pages.pages_path
+      end
+    end
+
+    context "when submit and edit" do
+      before do
+        click_button(I18n.t('no_cms.admin.pages.pages.toolbar.submit'))
+      end
+
+      it "should show the new form" do
+        expect(current_path).to eq no_cms_admin_pages.edit_page_path(NoCms::Pages::Page.last)
+      end
+    end
+  end
+
 end
