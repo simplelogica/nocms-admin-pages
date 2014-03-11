@@ -1,6 +1,8 @@
 en:
   no_cms:
     admin:
+      menu_items:
+        pages: Pages
       pages:
         blocks:
           index:
@@ -13,3 +15,7 @@ en:
           page_listing_item:
             destroy: Remove
             edit: Edit
+          toolbar:
+            submit: Save
+            submit_and_new: Save and new
+            submit_and_hide: Save and hide
