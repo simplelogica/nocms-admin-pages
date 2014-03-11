@@ -1,6 +1,7 @@
 <li>
-  <%= page.title %>
-  <%= link_to t('.edit'), edit_page_path(page)%>
-  <%= button_to t('.destroy'), page_path(page), method: :delete %>
+  <%= link_to page.title, edit_page_path(page)%>
+  <div class="mo">
+    <%= button_to t('.destroy'), page_path(page), method: :delete %>
+  </div>
   <%= render partial: 'page_listing_item', collection: page.children, as: 'page', layout: 'page_listing' unless page.children.blank? %>
 </li>

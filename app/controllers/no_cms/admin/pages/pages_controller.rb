@@ -4,10 +4,8 @@ module NoCms::Admin::Pages
   class PagesController < ApplicationController
 
     before_filter :load_page, only: [:edit, :update, :destroy]
+    before_filter :load_roots, only: [:index, :new, :edit]
 
-    def index
-      @roots = NoCms::Pages::Page.roots
-    end
 
     def new
       @page = NoCms::Pages::Page.new
@@ -18,6 +16,7 @@ module NoCms::Admin::Pages
       if @page.save
         redirect_to pages_path
       else
+        load_roots
         render :new
       end
     end
@@ -32,6 +31,7 @@ module NoCms::Admin::Pages
       if @page.update_attributes page_params
         redirect_to pages_path
       else
+        load_roots
         render :new
       end
     end
@@ -45,6 +45,10 @@ module NoCms::Admin::Pages
 
     def load_page
       @page = NoCms::Pages::Page.find(params[:id])
+    end
+
+    def load_roots
+      @roots = NoCms::Pages::Page.roots
     end
 
     def page_params
