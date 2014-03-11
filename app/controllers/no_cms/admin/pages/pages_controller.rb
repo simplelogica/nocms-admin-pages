@@ -3,6 +3,7 @@ require_dependency "no_cms/admin/pages/application_controller"
 module NoCms::Admin::Pages
   class PagesController < ApplicationController
 
+    before_filter :load_menu_section
     before_filter :load_page, only: [:edit, :update, :destroy]
     before_filter :load_roots, only: [:index, :new, :edit]
 
@@ -42,6 +43,10 @@ module NoCms::Admin::Pages
     end
 
     private
+
+    def load_menu_section
+      @current_section = 'pages'
+    end
 
     def load_page
       @page = NoCms::Pages::Page.find(params[:id])
