@@ -15,7 +15,7 @@ module NoCms::Admin::Pages
     def create
       @page = NoCms::Pages::Page.new page_params
       if @page.save
-        redirect_to pages_path
+        redirect_after_save
       else
         load_roots
         render :new
@@ -30,7 +30,7 @@ module NoCms::Admin::Pages
 
     def update
       if @page.update_attributes page_params
-        redirect_to pages_path
+        redirect_after_save
       else
         load_roots
         render :new
@@ -39,7 +39,6 @@ module NoCms::Admin::Pages
 
     def destroy
       @page.destroy
-      redirect_to pages_path
     end
 
     private
@@ -60,6 +59,17 @@ module NoCms::Admin::Pages
       page_params = params.require(:page).permit(:title, :body, :parent_id)
       page_params.merge!(blocks_attributes: params[:page][:blocks_attributes]) unless params[:page][:blocks_attributes].blank?
       page_params
+    end
+
+    def redirect_after_save
+      if params[:submit_and_hide]
+        redirect_to pages_path
+      elsif params[:submit_and_new]
+        redirect_to new_page_path
+      else params[:submit]
+        redirect_to edit_page_path(@page)
+      end
+
     end
 
   end
