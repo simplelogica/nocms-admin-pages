@@ -1,6 +1,8 @@
 en:
   no_cms:
     admin:
+      menu_items:
+        pages: Pages
       pages:
         blocks:
           index:
