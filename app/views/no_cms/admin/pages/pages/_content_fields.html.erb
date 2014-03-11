@@ -1,10 +1,13 @@
-<div id='content_fields'>
+<div class="row">
   <%= f.label :parent_id %>
   <%= f.select :parent_id, NoCms::Pages::Page.with_translations.map{|p| [p.path, p.id]}, include_blank: t('.choose_page') %>
-
+</div>
+<div class="row">
   <%= f.label :title %>
   <%= f.text_field :title %>
+</div>
 
+<div class="row">
   <%= f.label :body %>
   <%= f.text_area :body %>
 </div>

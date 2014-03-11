@@ -1,8 +1,8 @@
 <div id='content_blocks_placeholder'>
   <%= f.fields_for :blocks do |f_block| %>
     <div <%= raw f_block.object.new_record? ?
-      "class='new block' id ='new_content_block_#{f_block.object.layout}'" :
-      "class='block' id ='content_block_#{f_block.object.id}'" %>>
+      "class='new block row' id ='new_content_block_#{f_block.object.layout}'" :
+      "class='block row' id ='content_block_#{f_block.object.id}'" %>>
       <%= render 'no_cms/admin/pages/blocks/form', f: f_block %>
     </div>
   <% end %>
