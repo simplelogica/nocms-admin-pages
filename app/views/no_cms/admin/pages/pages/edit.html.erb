@@ -10,9 +10,24 @@
   <%= render partial: 'page_listing_item', collection: @roots, as: 'page', layout: 'page_listing', locals: { current: @page } unless @roots.blank? %>
 <% end %>
 
-<%= form_for @page do |f| %>
-  <%= render 'content_fields', f: f %>
-  <%= render 'no_cms/admin/pages/blocks/index', f: f %>
 
-  <%= f.submit t('.submit') %>
+<%= form_for @page do |f| %>
+  <%= render partial: 'toolbar', layout: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
+  <div class="content">
+    <%= render 'content_fields', f: f %>
+    <%= render 'no_cms/admin/pages/blocks/index', f: f %>
+  </div>
+
+  <div class="advanced">
+    <p class="title collapsed">Opciones avanzadas</p>
+    <div>
+      Ojete
+    </div>
+  </div>
 <% end %>
+<div class="advanced">
+  <p class="title collapsed">Opciones avanzadas</p>
+  <div>
+    Ojete
+  </div>
+</div>
