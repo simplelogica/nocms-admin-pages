@@ -12,7 +12,7 @@
 
 
 <%= form_for @page do |f| %>
-  <%= render partial: 'toolbar', layout: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
+  <%= render partial: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
   <div class="content">
     <%= render 'content_fields', f: f %>
     <%= render 'no_cms/admin/pages/blocks/index', f: f %>
