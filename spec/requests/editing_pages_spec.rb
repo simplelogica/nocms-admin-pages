@@ -25,7 +25,7 @@ describe NoCms::Admin::Pages do
         fill_in I18n.t('activerecord.attributes.no_cms/pages/page.title'), with: block_title
       end
 
-      click_button(I18n.t('no_cms.admin.pages.pages.new.submit'))
+      click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit_and_hide'))
     end
 
     it "should show the page in the admin index" do
@@ -53,7 +53,7 @@ describe NoCms::Admin::Pages do
 
     context "when submit and new" do
       before do
-        click_button(I18n.t('no_cms.admin.pages.pages.toolbar.submit_and_new'))
+        click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit_and_new'))
       end
 
       it "should show the new form" do
@@ -63,7 +63,7 @@ describe NoCms::Admin::Pages do
 
     context "when submit and hide" do
       before do
-        click_button(I18n.t('no_cms.admin.pages.pages.toolbar.submit_and_hide'))
+        click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit_and_hide'))
       end
 
       it "should show the new form" do
@@ -73,7 +73,7 @@ describe NoCms::Admin::Pages do
 
     context "when submit and edit" do
       before do
-        click_button(I18n.t('no_cms.admin.pages.pages.toolbar.submit'))
+        click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit'))
       end
 
       it "should show the new form" do

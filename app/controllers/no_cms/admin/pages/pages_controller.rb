@@ -39,6 +39,7 @@ module NoCms::Admin::Pages
 
     def destroy
       @page.destroy
+      redirect_to pages_path
     end
 
     private
