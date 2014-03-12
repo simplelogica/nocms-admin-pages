@@ -26,7 +26,7 @@ describe NoCms::Admin::Pages do
 
       end
 
-      click_button(I18n.t('no_cms.admin.pages.pages.new.submit'))
+      click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit'))
 
     end
 

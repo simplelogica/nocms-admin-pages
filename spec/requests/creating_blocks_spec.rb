@@ -37,7 +37,7 @@ describe NoCms::Admin::Pages do
         fill_in I18n.t('activerecord.attributes.no_cms/pages/block.body'), with: block_body
       end
 
-      click_button(I18n.t('no_cms.admin.pages.pages.new.submit'))
+      click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit'))
 
       visit nocms_page.path
       expect(page).to have_selector('.title', text: block_title)
