@@ -19,10 +19,34 @@ NoCMS.ContentBlockHandler = function() {
     that.updateBlock($(this).parents('.block'), $(this).val());
   });
 
+  block_placeholder.on('click', '.ico-mini-move-down', function(e){
+    e.preventDefault();
+    var block = $(this).parents('.block'),
+      next_blocks = block.nextAll('.block');
+
+    if(next_blocks.length > 0) {
+      that.switchBlockPositions(block, next_blocks.first());
+    }
+  });
+
+  block_placeholder.on('click', '.ico-mini-move-up', function(e){
+    e.preventDefault();
+    var block = $(this).parents('.block'),
+      previous_blocks = block.prevAll('.block');
+
+    if(previous_blocks.length > 0) {
+      that.switchBlockPositions(previous_blocks.first(), block);
+    }
+  });
+
   this.updateBlock = function(block, new_layout){
     new_template = block_templates.filter('#new_content_block_' + new_layout)
     block.find('.layout_fields').html(new_template.find('.layout_fields').html());
     this.modifyInputNames(block, block.find('.block_layout_selector').attr('id').match(/_([0-9]*)_/)[1]);
+  }
+
+  this.switchBlockPositions = function(block, next_block){
+    next_block.after(block);
   }
 
   this.createBlock = function(){
