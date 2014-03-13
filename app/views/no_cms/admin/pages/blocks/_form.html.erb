@@ -15,3 +15,4 @@
 <%= render "no_cms/admin/pages/blocks/#{f.object.template}" , f: f %>
 </div>
 
+<%= f.hidden_field :position, class: 'position', value: f.index %>

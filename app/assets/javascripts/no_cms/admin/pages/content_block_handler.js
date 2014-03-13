@@ -46,14 +46,22 @@ NoCMS.ContentBlockHandler = function() {
   }
 
   this.switchBlockPositions = function(block, next_block){
+    var next_block_position = next_block.find('.position').val();
+
+    next_block.find('.position').val(block.find('.position').val());
+    block.find('.position').val(next_block_position);
+
     next_block.after(block);
   }
 
   this.createBlock = function(){
+    var position = $('.block').not('.new').length;
     new_block = default_layout_block.clone();
     new_block.removeClass('new');
     new_block.removeAttr('id');
-    this.modifyInputNames(new_block, $('.block').not('.new').length);
+    this.modifyInputNames(new_block, position);
+    new_block.find('.position').val(position);
+
     block_placeholder.append(new_block);
   }
 
