@@ -1,4 +1,6 @@
-<div id='content_blocks_placeholder'>
+<div class="row has-children" id='content_blocks_placeholder'>
+  <label><%= t('.title') %></label>
+
   <%= f.fields_for :blocks do |f_block| %>
     <div <%= raw f_block.object.new_record? ?
       "class='new block row' id ='new_content_block_#{f_block.object.layout}'" :
