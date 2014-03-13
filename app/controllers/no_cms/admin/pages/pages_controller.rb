@@ -15,14 +15,17 @@ module NoCms::Admin::Pages
     def create
       @page = NoCms::Pages::Page.new page_params
       if @page.save
+        @logger.info(I18n.t('.no_cms.admin.pages.pages.create.success', title: @page.path), true)
         redirect_after_save
       else
+        @logger.error(I18n.t('.no_cms.admin.pages.pages.create.error', title: @page.path))
         load_roots
         render :new
       end
     end
 
     def edit
+      @logger.add_message :pages, I18n.t('.no_cms.admin.pages.pages.edit.log_messages', title: @page.path)
       NoCms::Pages.block_layouts.each do |name, _|
         @page.blocks.build layout: name
       end
@@ -30,8 +33,10 @@ module NoCms::Admin::Pages
 
     def update
       if @page.update_attributes page_params
+        @logger.info(I18n.t('.no_cms.admin.pages.pages.update.success', title: @page.path), true)
         redirect_after_save
       else
+        @logger.error(I18n.t('.no_cms.admin.pages.pages.update.error', title: @page.path))
         load_roots
         render :new
       end
