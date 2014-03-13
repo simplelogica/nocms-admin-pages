@@ -39,6 +39,11 @@ NoCMS.ContentBlockHandler = function() {
     }
   });
 
+  block_placeholder.on('click', '.ico-mini-show-hide', function(e){
+    e.preventDefault();
+    that.toggleDraft($(this).parents('.block'));
+  });
+
   this.updateBlock = function(block, new_layout){
     new_template = block_templates.filter('#new_content_block_' + new_layout)
     block.find('.layout_fields').html(new_template.find('.layout_fields').html());
@@ -79,6 +84,10 @@ NoCMS.ContentBlockHandler = function() {
 
   }
 
+  this.toggleDraft = function(block) {
+    var draft_field = block.find('.draft');
+    draft_field.val(draft_field.val() == '1' ? '0' : '1');
+  }
 
   block_templates.each(function() {
     $(this).detach();
