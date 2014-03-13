@@ -1,6 +1,8 @@
 <div class="row has-children" id='content_blocks_placeholder'>
   <label><%= t('.title') %></label>
 
+  <%= link_to t('.new_block'), '#', id: 'new_content_block', class: 'btn _m0' %>
+
   <%= f.fields_for :blocks do |f_block| %>
     <div <%= raw f_block.object.new_record? ?
       "class='new block row' id ='new_content_block_#{f_block.object.layout}'" :
@@ -9,4 +11,3 @@
     </div>
   <% end %>
 </div>
-<%= link_to t('.new_block'), '#', id: 'new_content_block' %>
