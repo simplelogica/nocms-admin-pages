@@ -43,7 +43,11 @@ module NoCms::Admin::Pages
     end
 
     def destroy
-      @page.destroy
+      if @page.destroy
+        @logger.info(I18n.t('.no_cms.admin.pages.pages.destroy.success', title: @page.path), true)
+      else
+        @logger.error(I18n.t('.no_cms.admin.pages.pages.destroy.error', title: @page.path), true)
+      end
       redirect_to pages_path
     end
 

@@ -11,6 +11,9 @@ en:
           create:
             success: "Page %{title} has been created"
             error: "Some error was found and page %{title} couldn't be created"
+          destroy:
+            success: "Page %{title} has been deleted"
+            error: "Some error was found and page %{title} couldn't be deleted"
           edit:
             log_messages: "Page %{title} loaded for editing"
             submit: 'Send'
