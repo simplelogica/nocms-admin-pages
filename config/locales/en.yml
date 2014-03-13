@@ -8,7 +8,11 @@ en:
           index:
             new_block: Create new block
         pages:
+          create:
+            success: "Page %{title} has been created"
+            error: "Some error was found and page %{title} couldn't be created"
           edit:
+            log_messages: "Page %{title} loaded for editing"
             submit: 'Send'
           new:
             submit: 'Send'
@@ -19,3 +23,6 @@ en:
             submit: Save
             submit_and_new: Save and new
             submit_and_hide: Save and hide
+          update:
+            success: "Page %{title} has been updated"
+            error: "Some error was found and page %{title} couldn't be updated"

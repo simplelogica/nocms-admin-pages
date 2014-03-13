@@ -4,6 +4,7 @@
 <%= form_for @page do |f| %>
   <%= render partial: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
   <div class="content">
+    <%= render 'no_cms/admin/shared/log_messages' %>
     <%= render 'content_fields', f: f %>
   </div>
 
