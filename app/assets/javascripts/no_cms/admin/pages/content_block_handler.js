@@ -16,7 +16,7 @@ NoCMS.ContentBlockHandler = function() {
   });
 
   block_placeholder.on('change', '.block_layout_selector', function(e){
-    that.updateBlock($(this).parent('.block'), $(this).val());
+    that.updateBlock($(this).parents('.block'), $(this).val());
   });
 
   this.updateBlock = function(block, new_layout){
