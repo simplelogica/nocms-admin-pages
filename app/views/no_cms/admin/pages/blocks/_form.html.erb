@@ -16,3 +16,4 @@
 </div>
 
 <%= f.hidden_field :position, class: 'position', value: f.index %>
+<%= f.hidden_field :draft,  class: 'draft', value: f.object.draft ? '1' : '0' %>
