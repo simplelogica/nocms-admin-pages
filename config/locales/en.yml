@@ -22,7 +22,8 @@ en:
             submit: 'Send'
           page_listing_item:
             destroy: Remove
-            edit: Edit
+            show: Show Page
+            hide: Mark Page as draft
           toolbar_right:
             submit: Save
             submit_and_new: Save and new
