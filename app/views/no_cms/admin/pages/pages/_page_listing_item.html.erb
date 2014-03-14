@@ -1,5 +1,5 @@
 <% current ||= nil %>
-<li <%= raw 'class="current"' if current == page%>>
+<li <%= raw "class='#{page_listing_item_classes(page, current).join(' ')}'"%>>
   <%= link_to page.title, edit_page_path(page)%>
   <div class="mo">
     <%= button_to '', page_path(page), method: :delete, class: "ico-mini-delete", title: t('.destroy') %>
