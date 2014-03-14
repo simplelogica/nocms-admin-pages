@@ -75,6 +75,29 @@ section#content-area .content .row {
 
     }
 
+
+    &.to-be-deleted {
+      .title {
+        .mo {
+          .ico-mini-delete {
+            background-color: $accent !important;
+          }
+        }
+      }
+    }
+
+    &.oculto {
+      .title {
+        .mo {
+          .ico-mini-show-hide {
+            background-color: $accent !important;
+          }
+        }
+      }
+      .row {
+        background-image: image-url('no_cms/admin/pages/stripe_5d3ba7190e7de9a95d82d43dce2917b1_a10.png');
+      }
+    }
     >.row {
       &:last-of-type {
         border-bottom: 2px solid lighten($bg, 50%);

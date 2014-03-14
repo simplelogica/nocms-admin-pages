@@ -4,9 +4,8 @@
   <%= link_to t('.new_block'), '#', id: 'new_content_block', class: 'btn _m0' %>
 
   <%= f.fields_for :blocks do |f_block| %>
-    <div <%= raw f_block.object.new_record? ?
-      "class='new block row' id ='new_content_block_#{f_block.object.layout}'" :
-      "class='block row' id ='content_block_#{f_block.object.id}'" %>>
+
+    <div class="block row <%= block_form_classes(f_block.object).join(" ")%>" id="<%= block_form_id(f_block.object) %>">
       <%= render 'no_cms/admin/pages/blocks/form', f: f_block %>
     </div>
   <% end %>

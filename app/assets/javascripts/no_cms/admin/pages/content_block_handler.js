@@ -91,11 +91,13 @@ NoCMS.ContentBlockHandler = function() {
 
   this.toggleDraft = function(block) {
     var draft_field = block.find('.draft');
+    block.toggleClass('oculto');
     draft_field.val(draft_field.val() == '1' ? '0' : '1');
   }
 
   this.toggleDestroy = function(block) {
     var draft_field = block.find('.destroy');
+    block.toggleClass('to-be-deleted');
     draft_field.val(draft_field.val() == '1' ? '0' : '1');
   }
 
