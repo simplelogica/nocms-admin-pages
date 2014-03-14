@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/simplelogica/nocms-admin.git
-  revision: 23b2929b9c7c835ce67446101a33953ba0396a0b
+  revision: c11f02ef348038c46ed9f1c2cb66c90dc6993c19
   branch: master
   specs:
     nocms-admin (0.0.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/simplelogica/nocms-pages.git
-  revision: 858ffc9695de0ea0fe986c8433f01684e5a3dd09
+  revision: 593e3b3d2baab5158bbc24a0d5f08a6a0798f108
   branch: master
   specs:
     nocms-pages (0.0.1)

@@ -1,7 +1,7 @@
 <div class="title">
   <%= I18n.t "no_cms.pages.blocks.layouts.#{f.object.layout}" %>
   <div class="mo">
-    <input type="submit" value="" class="ico-mini-delete">
+    <a href="" class="ico-mini-delete">
     <a href="" class="ico-mini-move-up"></a>
     <a href="" class="ico-mini-move-down"></a>
     <a href="" class="ico-mini-show-hide"></a>
@@ -17,3 +17,4 @@
 
 <%= f.hidden_field :position, class: 'position', value: f.index %>
 <%= f.hidden_field :draft,  class: 'draft', value: f.object.draft ? '1' : '0' %>
+<%= f.hidden_field :_destroy,  class: 'destroy', value: '0' %>
