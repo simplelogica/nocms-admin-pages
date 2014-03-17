@@ -5,7 +5,7 @@ require "no_cms/admin/pages/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "nocms-pages-admin"
+  s.name        = "nocms-admin-pages"
   s.version     = NoCms::Admin::Pages::VERSION
   s.authors     = ["Simplelogica"]
   s.email       = ["gems@simplelogica.net"]
