@@ -15,7 +15,7 @@
 <% end %>
 
 
-<%= form_for @page do |f| %>
+<%= no_cms_admin_form_for @page do |f| %>
   <%= render partial: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
   <div class="content">
     <%= render 'no_cms/admin/shared/log_messages' %>
