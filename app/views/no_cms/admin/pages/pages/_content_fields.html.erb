@@ -7,6 +7,13 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+  <div class="row">
+
+    <%= f.label_with_tooltip :slug, { tooltip: t('.slug_tooltip')} %>
+
+    <%= f.object.parent.path unless f.object.parent.nil? %>
+    <%= f.text_field :slug %>
+  </div>
 
   <div class="row">
     <%= f.label :body %>
