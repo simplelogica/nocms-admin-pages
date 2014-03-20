@@ -9,6 +9,8 @@ en:
             new_block: Create new block
             title: Blocks attached to this page
         pages:
+          content_fields:
+            slug_tooltip: "This field will be used to build the url for this page and all its children pages"
           create:
             success: "Page %{title} has been created"
             error: "Some error was found and page %{title} couldn't be created"
