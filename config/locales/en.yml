@@ -27,6 +27,7 @@ en:
             show: Show Page
             hide: Mark Page as draft
           toolbar_right:
+            preview: Preview
             submit: Save
             submit_and_new: Save and new
             submit_and_hide: Save and hide
