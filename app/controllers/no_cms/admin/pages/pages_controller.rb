@@ -53,6 +53,7 @@ module NoCms::Admin::Pages
 
     def preview
       @page.assign_attributes page_params
+      @blocks = @page.blocks.select{|b| b.draft == '0'}
       render template: 'no_cms/pages/pages/show', layout: 'application'
     end
 
