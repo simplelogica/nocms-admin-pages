@@ -4,6 +4,10 @@
     <%= f.select :parent_id, NoCms::Pages::Page.with_translations.map{|p| [p.path, p.id]}, include_blank: t('.choose_page') %>
   </div>
   <div class="row">
+    <%= f.label :template %>
+    <%= f.select :template, NoCms::Pages::Page.templates.map{|t| [I18n.t(".no_cms.admin.pages.pages.templates.#{t}"), t] } %>
+  </div>
+  <div class="row">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>

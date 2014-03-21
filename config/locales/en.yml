@@ -22,6 +22,8 @@ en:
             submit: 'Send'
           new:
             submit: 'Send'
+          templates:
+            show: Default
           page_listing_item:
             destroy: Remove
             show: Show Page
