@@ -2,3 +2,5 @@
 <%= f.submit t('.submit_and_new'), name: 'submit_and_new', class: "btn right" %>
 <%= f.submit t('.submit_and_hide'), name: 'submit_and_hide', class: "btn right" %>
 <%= link_to t('.preview'), preview_page_path(@page), 'data-preview' => true, class: "preview btn right" %>
+<% # We must check that nocms-pages routes are mounted. Otherwise it will get a 404 error %>
+<%= link_to t('.visit'), @page.path, target: '_blank', class: "preview btn right" if defined?(no_cms_pages) %>
