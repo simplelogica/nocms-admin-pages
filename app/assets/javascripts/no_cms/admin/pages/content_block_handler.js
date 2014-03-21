@@ -4,7 +4,7 @@
 NoCMS.ContentBlockHandler = function() {
 
 
-  var default_layout_block = $('#new_content_block_default'),
+  var default_layout_block = $('.block.new').first(),
     block_placeholder = $('#content_blocks_placeholder'),
     new_content_link = $('#new_content_block'),
     block_templates = $('.new.block'),
