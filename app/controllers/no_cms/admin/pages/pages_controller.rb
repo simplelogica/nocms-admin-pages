@@ -4,7 +4,7 @@ module NoCms::Admin::Pages
   class PagesController < ApplicationController
 
     before_filter :load_menu_section
-    before_filter :load_page, only: [:edit, :update, :destroy]
+    before_filter :load_page, only: [:preview, :edit, :update, :destroy]
     before_filter :load_roots, only: [:index, :new, :edit]
 
 
@@ -49,6 +49,11 @@ module NoCms::Admin::Pages
         @logger.error(I18n.t('.no_cms.admin.pages.pages.destroy.error', title: @page.path), true)
       end
       redirect_to pages_path
+    end
+
+    def preview
+      @page.assign_attributes page_params
+      render template: 'no_cms/pages/pages/show', layout: 'application'
     end
 
     private
