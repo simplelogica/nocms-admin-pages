@@ -1,9 +1,9 @@
 <% content_for :js do %>
-  <%= javascript_include_tag 'no_cms/admin/pages/content_block_handler' %>
+  <%= javascript_include_tag 'no_cms/admin/nocms_admin.block_handler' %>
 <% end %>
 
 <% content_for :ready_js do %>
-  NoCMS.ContentBlockHandler();
+  NoCMS.Admin.BlockHandler();
 <% end %>
 
 <% content_for :stylesheets do %>
