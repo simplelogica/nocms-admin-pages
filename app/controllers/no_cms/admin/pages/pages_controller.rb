@@ -38,7 +38,7 @@ module NoCms::Admin::Pages
       else
         @nocms_logger.error(I18n.t('.no_cms.admin.pages.pages.update.error', title: @page.path))
         load_roots
-        render :new
+        render :edit
       end
     end
 
