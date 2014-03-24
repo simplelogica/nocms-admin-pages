@@ -2,10 +2,6 @@
   <%= render partial: 'page_listing_item', collection: @roots, as: 'page', layout: 'page_listing', locals: { current: @page } unless @roots.blank? %>
 <% end %>
 
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'no_cms/admin/pages/pages' %>
-<% end %>
-
 <%= no_cms_admin_form_for @page do |f| %>
   <%= render partial: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
   <div class="content">
