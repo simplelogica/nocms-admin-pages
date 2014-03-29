@@ -51,7 +51,8 @@ NoCms::Pages.configure do |config|
       fields: {
         corners_css_class: :string,
         background_color: :string
-      }
+      },
+      allow_nested_blocks: true
     }
 
   }
