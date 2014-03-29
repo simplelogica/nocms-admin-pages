@@ -24,10 +24,13 @@ en:
     attributes:
       no_cms/pages/block:
         column_1: Column 1
+        background_color: Background color
+        corners_css_class: Corners style
   no_cms:
     pages:
       blocks:
         layouts:
           logo-caption: Image and caption
           title-3_columns: 3 columns and title
+          container_with_background: Container with a background
 
