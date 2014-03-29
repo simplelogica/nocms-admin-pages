@@ -8,6 +8,9 @@ en:
           index:
             new_block: Create new block
             title: Blocks attached to this page
+          nested_index:
+            new_block: Create new block
+            title: Children
         pages:
           content_fields:
             slug_tooltip: "This field will be used to build the url for this page and all its children pages"
