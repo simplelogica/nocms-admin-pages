@@ -9,7 +9,12 @@
 </div>
 <div class="row">
   <%= f.label :layout %>
-  <%= f.select :layout, NoCms::Pages.block_layouts.map{|name, _| [ I18n.t("no_cms.pages.blocks.layouts.#{name}"), name ]}, {}, class: 'block_layout_selector' %>
+  <%= f.select :layout, NoCms::Pages.block_layouts.map{|name, layout| [
+      I18n.t("no_cms.pages.blocks.layouts.#{name}"),
+      name,
+      'data-nest-levels' => layout[:nest_levels].nil? ? nil : layout[:nest_levels].to_json
+    ]},
+    {}, class: 'block_layout_selector' %>
 </div>
 <div class='layout_fields'>
   <%= render "no_cms/admin/pages/blocks/#{f.object.template}" , f: f %>
