@@ -45,7 +45,16 @@ NoCms::Pages.configure do |config|
         caption: :string,
         logo: TestImage
       }
+    },
+    'container_with_background' => {
+      template: 'container_with_background',
+      fields: {
+        corners_css_class: :string,
+        background_color: :string
+      },
+      allow_nested_blocks: true
     }
+
   }
 
 end

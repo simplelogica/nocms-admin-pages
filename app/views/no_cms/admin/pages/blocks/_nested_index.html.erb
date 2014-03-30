@@ -1,0 +1,12 @@
+<div class="row has-children content_blocks_placeholder">
+  <label><%= t('.title') %></label>
+
+  <%= link_to t('.new_block'), '#', class: 'new_content_block btn _m0' %>
+
+  <%= f.fields_for :children do |f_child| %>
+
+    <div class="block row <%= block_form_classes(f_child.object).join(" ")%>" id="<%= block_form_id(f_child.object) %>">
+      <%= render 'no_cms/admin/pages/blocks/form', f: f_child %>
+    </div>
+  <% end %>
+</div>
