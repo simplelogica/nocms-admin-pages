@@ -16,6 +16,6 @@
   <%= render 'no_cms/admin/pages/blocks/nested_index', f: f if f.object.layout_config[:allow_nested_blocks] %>
 </div>
 
-<%= f.hidden_field :position, class: 'position', value: f.index %>
+<%= f.hidden_field :position, class: 'position' %>
 <%= f.hidden_field :draft,  class: 'draft', value: f.object.draft ? '1' : '0' %>
 <%= f.hidden_field :_destroy,  class: 'destroy', value: '0' %>
