@@ -1,20 +1,19 @@
-<div class="title">
-  <%= I18n.t "no_cms.pages.blocks.layouts.#{f.object.layout}" %>
-  <div class="mo">
-    <a href="" class="ico-mini-delete">
-    <a href="" class="ico-mini-move-up"></a>
-    <a href="" class="ico-mini-move-down"></a>
-    <a href="" class="ico-mini-show-hide"></a>
-  </div>
-</div>
-<div class="row">
-  <%= f.label :layout %>
+<div class="b-title row">
+  <a href="#" class="btn-square ico-collapse-v js-collapse-block" title="Expand /Collapse"></a>
+
   <%= f.select :layout, NoCms::Pages.block_layouts.map{|name, layout| [
       I18n.t("no_cms.pages.blocks.layouts.#{name}"),
       name,
       'data-nest-levels' => layout[:nest_levels].nil? ? nil : layout[:nest_levels].to_json
     ]},
     {}, class: 'block_layout_selector' %>
+
+  <div class="mo">
+    <a href="" class="ico-mini-delete"></a>
+    <a href="" class="ico-mini-move-up"></a>
+    <a href="" class="ico-mini-move-down"></a>
+    <a href="" class="ico-mini-show-hide"></a>
+  </div>
 </div>
 <div class='layout_fields'>
   <%= render "no_cms/admin/pages/blocks/#{f.object.template}" , f: f %>
