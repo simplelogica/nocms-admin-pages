@@ -28,7 +28,8 @@ NoCms::Pages.configure do |config|
       fields: {
         title: :string,
         body: :text
-      }
+      },
+      nest_levels: [0]
     },
     'title-3_columns' => {
       template: 'title_3_columns',
@@ -38,13 +39,15 @@ NoCms::Pages.configure do |config|
         column_2: :text,
         column_3: :text
       },
+      nest_levels: [0]
     },
     'logo-caption' => {
       template: 'logo_caption',
       fields: {
         caption: :string,
         logo: TestImage
-      }
+      },
+      nest_levels: [1]
     },
     'container_with_background' => {
       template: 'container_with_background',
@@ -52,7 +55,8 @@ NoCms::Pages.configure do |config|
         corners_css_class: :string,
         background_color: :string
       },
-      allow_nested_blocks: true
+      allow_nested_blocks: true,
+      nest_levels: [0, 1, 2]
     }
 
   }
