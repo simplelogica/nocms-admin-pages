@@ -1,21 +1,22 @@
 GIT
   remote: https://github.com/simplelogica/nocms-admin.git
-  revision: 389fee623e69bab8150634ba283090828777e2d2
+  revision: 4d6e936a928b12458408cc3ead3572b03365536b
   branch: master
   specs:
     nocms-admin (0.0.1)
-      rails (~> 4.0.3)
-      sass-rails (~> 4.0.0)
+      jquery-rails (~> 3.1)
+      rails (~> 4.0, >= 4.0.3)
+      sass-rails (~> 4.0, >= 4.0.0)
 
 GIT
   remote: https://github.com/simplelogica/nocms-pages.git
-  revision: 4acc774f5a800039c73b14f51ac46f74dfb43332
+  revision: 4cc9f394f41239f0a8b6e40e5fda1d5283dd8c44
   branch: master
   specs:
     nocms-pages (0.0.1)
-      awesome_nested_set (~> 2.1.6)
-      globalize (~> 4.0.0)
-      rails (~> 4.0.3)
+      awesome_nested_set (~> 2.1, >= 2.1.6)
+      globalize (~> 4.0, >= 4.0.0)
+      rails (~> 4.0, >= 4.0.3)
 
 PATH
   remote: .
