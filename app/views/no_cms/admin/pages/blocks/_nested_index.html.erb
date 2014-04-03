@@ -7,7 +7,7 @@
     </div>
 
 
-    <%= f.fields_for :children do |f_child| %>
+    <%= f.fields_for :children, f.object.children.sort_by(&:position) do |f_child| %>
 
       <div class="block row <%= block_form_classes(f_child.object).join(" ")%>" id="<%= block_form_id(f_child.object) %>">
         <%= render 'no_cms/admin/pages/blocks/form', f: f_child %>
