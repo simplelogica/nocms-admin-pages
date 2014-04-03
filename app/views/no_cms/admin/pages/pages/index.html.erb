@@ -2,10 +2,6 @@
   <%= render partial: 'page_listing_item', collection: @roots, as: 'page', layout: 'page_listing' unless @roots.blank? %>
 <% end %>
 
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'no_cms/admin/pages/pages' %>
-<% end %>
-
 <div class="content">
   <%= render 'no_cms/admin/shared/log_messages' %>
 </div>
