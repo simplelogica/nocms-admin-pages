@@ -19,8 +19,10 @@
     <%= f.text_field :slug %>
   </div>
 
-  <div class="row">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
+  <% if NoCms::Pages.use_body %>
+    <div class="row">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+  <% end %>
 </div>
