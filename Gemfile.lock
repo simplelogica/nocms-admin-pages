@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/simplelogica/nocms-admin.git
-  revision: 726ea575b3d3862174f2f5d9b87ffe2c6b816f3e
+  revision: 8ce397e10943573102497735ecd4e647c24e7879
   branch: master
   specs:
     nocms-admin (0.0.1)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/simplelogica/nocms-pages.git
-  revision: 44bebfc208a78b58073daa7803ca614cb5f34bab
+  revision: 83dcd11ac69d73fcf185ec721ec1f149c8e15dbf
   branch: master
   specs:
     nocms-pages (0.0.1)
@@ -70,7 +70,14 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
     cliver (0.3.2)
+    columnize (0.3.6)
     database_cleaner (1.2.0)
+    debugger (1.6.6)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.2)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (4.4.0)
@@ -172,6 +179,7 @@ DEPENDENCIES
   capybara
   carrierwave
   database_cleaner
+  debugger
   factory_girl
   faker
   nocms-admin!

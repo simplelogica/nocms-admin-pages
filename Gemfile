@@ -20,6 +20,7 @@ gemspec
 group :development, :test do
   gem 'faker'
   gem 'carrierwave' # For development and testing purposes (Images)
+  gem 'debugger'
 end
 
 group :test do
