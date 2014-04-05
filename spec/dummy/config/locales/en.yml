@@ -26,6 +26,7 @@ en:
         column_1: Column 1
         background_color: Background color
         corners_css_class: Corners style
+        caption: Caption
   no_cms:
     pages:
       blocks:

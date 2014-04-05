@@ -65,5 +65,25 @@ describe NoCms::Admin::Pages do
       expect(page).to have_selector "#content_block_#{block_container.id} .new_content_block"
     end
 
+    it "should create a 'new child block'" do
+
+      expect(page).to_not have_selector "#content_block_#{block_container.id} .block"
+
+      within "#content_block_#{block_container.id}" do
+        click_link I18n.t('no_cms.admin.pages.blocks.nested_index.new_block')
+      end
+
+      expect(page).to have_selector "#content_block_#{block_container.id} .block"
+
+      within("#content_block_#{block_container.id} .block") do
+        fill_in I18n.t('activerecord.attributes.no_cms/pages/block.caption'), with: block_title
+      end
+
+      click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit'))
+
+      visit nocms_page.path
+      expect(page).to have_selector('.caption', text: block_title)
+    end
+
   end
 end
