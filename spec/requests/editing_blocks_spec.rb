@@ -19,7 +19,7 @@ describe NoCms::Admin::Pages do
 
       within("#content_block_#{block_default_layout.id}") do
 
-        select I18n.t('no_cms.pages.blocks.layouts.title-3_columns'), from: I18n.t('activerecord.attributes.no_cms/pages/block.layout')
+        select I18n.t('no_cms.pages.blocks.layouts.title-3_columns'), from: "page_blocks_attributes_0_layout"
 
         fill_in I18n.t('activerecord.attributes.no_cms/pages/block.title'), with: block_title
         fill_in I18n.t('activerecord.attributes.no_cms/pages/block.column_1'), with: block_column
