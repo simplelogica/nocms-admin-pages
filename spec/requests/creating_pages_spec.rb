@@ -5,8 +5,9 @@ describe NoCms::Admin::Pages do
   context "when creating a new page", js: true do
 
     let(:page_title) { Faker::Lorem.sentence }
-    let(:page_path) { "/#{page_title.parameterize}" }
+    let(:page_path) { "/#{page_slug}" }
     let(:page_body) { Faker::Lorem.paragraph }
+    let(:page_slug) { "#{page_title.parameterize}" }
 
     subject { page }
 
@@ -15,6 +16,7 @@ describe NoCms::Admin::Pages do
 
       fill_in I18n.t('activerecord.attributes.no_cms/pages/page.title'), with: page_title
       fill_in I18n.t('activerecord.attributes.no_cms/pages/page.body'), with: page_body
+      fill_in I18n.t('activerecord.attributes.no_cms/pages/page.slug'), with: page_slug
 
       click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit_and_hide'))
     end
