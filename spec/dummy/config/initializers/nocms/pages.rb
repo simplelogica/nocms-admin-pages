@@ -47,7 +47,7 @@ NoCms::Pages.configure do |config|
         caption: :string,
         logo: TestImage
       },
-      nest_levels: [1]
+      nest_levels: [0,1]
     },
     'container_with_background' => {
       template: 'container_with_background',
