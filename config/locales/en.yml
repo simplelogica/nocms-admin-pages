@@ -8,6 +8,11 @@ en:
           index:
             new_block: Create new block
             title: Blocks attached to this page
+          form:
+            hide: Hide
+            move_down: Move down
+            move_up: Move up
+            remove: Delete
           nested_index:
             new_block: Create new block
             title: Children
