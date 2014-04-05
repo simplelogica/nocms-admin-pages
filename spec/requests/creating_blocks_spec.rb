@@ -46,4 +46,24 @@ describe NoCms::Admin::Pages do
     end
 
   end
+
+  context "when creating new nested blocks", js: true do
+    let(:nocms_page) { create :nocms_page }
+    let(:block_title) { Faker::Lorem.sentence }
+    let(:block_body) { Faker::Lorem.sentence }
+
+    let(:block_container) { create :nocms_block, layout: 'container_with_background', page: nocms_page }
+
+    subject { page }
+
+    before do
+      block_container
+      visit no_cms_admin_pages.edit_page_path(nocms_page)
+    end
+
+    it "should show a 'new child block'" do
+      expect(page).to have_selector "#content_block_#{block_container.id} .new_content_block"
+    end
+
+  end
 end
