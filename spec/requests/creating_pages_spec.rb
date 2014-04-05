@@ -15,7 +15,9 @@ describe NoCms::Admin::Pages do
       visit no_cms_admin_pages.new_page_path
 
       fill_in I18n.t('activerecord.attributes.no_cms/pages/page.title'), with: page_title
-      fill_in I18n.t('activerecord.attributes.no_cms/pages/page.body'), with: page_body
+      if NoCms::Pages.use_body?
+        fill_in I18n.t('activerecord.attributes.no_cms/pages/page.body'), with: page_body
+      end
       fill_in I18n.t('activerecord.attributes.no_cms/pages/page.slug'), with: page_slug
 
       click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit_and_hide'))
@@ -45,7 +47,9 @@ describe NoCms::Admin::Pages do
       visit no_cms_admin_pages.new_page_path
 
       fill_in I18n.t('activerecord.attributes.no_cms/pages/page.title'), with: page_title
-      fill_in I18n.t('activerecord.attributes.no_cms/pages/page.body'), with: page_body
+      if NoCms::Pages.use_body?
+        fill_in I18n.t('activerecord.attributes.no_cms/pages/page.body'), with: page_body
+      end
 
     end
 
