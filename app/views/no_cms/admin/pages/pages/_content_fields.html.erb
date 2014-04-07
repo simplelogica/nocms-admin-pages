@@ -19,6 +19,14 @@
     <%= f.text_field :slug %>
   </div>
 
+  <div class="row">
+
+    <%= f.label_with_tooltip :css_class, t('.css_settings'), { tooltip: t('.css_settings_tooltip')} %>
+
+    <%= f.text_field :css_class, class: 'half', placeholder: t('activerecord.attributes.no_cms/pages/page.css_class') %>
+    <%= f.text_field :css_id, class: 'half', placeholder: t('activerecord.attributes.no_cms/pages/page.css_id') %>
+  </div>
+
   <% if NoCms::Pages.use_body %>
     <div class="row">
       <%= f.label :body %>
