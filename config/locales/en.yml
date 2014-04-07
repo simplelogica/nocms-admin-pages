@@ -18,6 +18,8 @@ en:
             title: Children
         pages:
           content_fields:
+            css_settings: Stylesheet settings
+            css_settings_tooltip: This setting configures some aspects on how pages should be displayed.
             slug_tooltip: "This field will be used to build the url for this page and all its children pages"
           create:
             success: "Page %{title} has been created"
