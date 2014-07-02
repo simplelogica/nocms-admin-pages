@@ -19,6 +19,13 @@
     <%= f.text_field :slug %>
   </div>
 
+  <% if NoCms::Pages.cache_enabled %>
+    <div class="row">
+      <%= f.label_with_tooltip :cache_enabled, { tooltip: t('.cache_enabled_tooltip')} %>
+      <%= f.check_box :cache_enabled %>
+    </div>
+  <% end %>
+
   <div class="row">
 
     <%= f.label_with_tooltip :css_class, t('.css_settings'), { tooltip: t('.css_settings_tooltip')} %>
