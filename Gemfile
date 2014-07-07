@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "nocms-pages", git: 'https://github.com/simplelogica/nocms-pages.git', branch: 'master'
+gem "nocms-pages", git: 'https://github.com/simplelogica/nocms-pages.git', branch: 'features/cache-blocks'
 gem "nocms-admin", git: 'https://github.com/simplelogica/nocms-admin.git', branch: 'master'
 
 # Declare your gem's dependencies in pages.gemspec.

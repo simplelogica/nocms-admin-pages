@@ -72,7 +72,7 @@ module NoCms::Admin::Pages
     end
 
     def page_params
-      page_params = params.require(:page).permit(:title, :template, :slug, :body, :parent_id, :draft, :css_class, :css_id)
+      page_params = params.require(:page).permit(:title, :template, :slug, :body, :parent_id, :draft, :css_class, :css_id, :cache_enabled)
       page_params.merge!(blocks_attributes: params[:page][:blocks_attributes]) unless params[:page][:blocks_attributes].blank?
       page_params
     end
