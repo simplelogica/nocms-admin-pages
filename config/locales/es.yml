@@ -1,0 +1,50 @@
+es:
+  no_cms:
+    admin:
+      menu_items:
+        pages: Páginas
+      pages:
+        blocks:
+          index:
+            new_block: Crear nuevo bloque
+            title: Bloque asociado a esta página
+          form:
+            hide: Ocultar
+            move_down: Mover abajo
+            move_up: Mover arriba
+            remove: Borrar
+          nested_index:
+            new_block: Crear nuevo bloque
+            title: Hijos
+        pages:
+          content_fields:
+            css_settings: Configuración de estilos
+            css_settings_tooltip: Esta configuración establece algunos aspectos sobre como se mostrarán las páginas.
+            slug_tooltip: "Este campo se usará para construir la url de esta página y las de todas sus páginas hijas.
+            cache_enabled_tooltip: "Si dejas este campo sin seleccionar la caché estará deshabilitada para los bloques de esta página."
+          create:
+            success: "La página %{title} ha sido creada"
+            error: "Se han encontrado algunos errores y la página %{title} no ha podido ser creada"
+          destroy:
+            success: "La página %{title} ha sido borrada"
+            error: "Se han encontrado algunos errores y la página %{title} no ha podido ser borrada"
+          edit:
+            log_messages: "Página %{title} cargada para editar"
+            submit: 'Enviar'
+          new:
+            submit: 'Enviar'
+          templates:
+            show: Default
+          page_listing_item:
+            destroy: Borrar
+            show: Mostrar página
+            hide: Marcar página como borrador
+          toolbar_right:
+            preview: Previsualizar
+            submit: Guardar
+            submit_and_new: Guardar y nueva
+            submit_and_hide: Guardar y ocultar
+            visit: Visitar
+          update:
+            success: "La página %{title} ha sido actualizada"
+            error: "Se han encontrado algunos errores y la página %{title} no ha podido ser actualizada"
