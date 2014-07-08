@@ -20,7 +20,7 @@ es:
           content_fields:
             css_settings: Configuración de estilos
             css_settings_tooltip: Esta configuración establece algunos aspectos sobre como se mostrarán las páginas.
-            slug_tooltip: "Este campo se usará para construir la url de esta página y las de todas sus páginas hijas.
+            slug_tooltip: Este campo se usará para construir la url de esta página y las de todas sus páginas hijas.
             cache_enabled_tooltip: "Si dejas este campo sin seleccionar la caché estará deshabilitada para los bloques de esta página."
           create:
             success: "La página %{title} ha sido creada"
