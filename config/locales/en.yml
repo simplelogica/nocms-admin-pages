@@ -22,6 +22,7 @@ en:
             css_settings_tooltip: This setting configures some aspects on how pages should be displayed.
             slug_tooltip: "This field will be used to build the url for this page and all its children pages"
             cache_enabled_tooltip: "If you leave this option unchecked then cache will be disabled for the blocks of this page regardless the site configuration."
+            choose_page: Choose page
           create:
             success: "Page %{title} has been created"
             error: "Some error was found and page %{title} couldn't be created"
