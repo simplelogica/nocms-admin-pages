@@ -32,6 +32,8 @@ en:
           edit:
             log_messages: "Page %{title} loaded for editing"
             submit: 'Send'
+          layouts:
+            application: Default
           new:
             submit: 'Send'
           templates:
