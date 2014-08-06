@@ -32,6 +32,8 @@ es:
           edit:
             log_messages: "Página %{title} cargada para editar"
             submit: 'Enviar'
+          layouts:
+            application: Por defecto
           new:
             submit: 'Enviar'
           templates:

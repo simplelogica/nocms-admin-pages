@@ -28,10 +28,14 @@ en:
         corners_css_class: Corners style
         caption: Caption
   no_cms:
+    admin:
+      pages:
+        pages:
+          layouts:
+            landing: Landings
     pages:
       blocks:
         layouts:
           logo-caption: Image and caption
           title-3_columns: 3 columns and title
           container_with_background: Container with a background
-
