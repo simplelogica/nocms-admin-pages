@@ -26,9 +26,7 @@ module NoCms::Admin::Pages
 
     def edit
       @nocms_logger.add_message :pages, I18n.t('.no_cms.admin.pages.pages.edit.log_messages', title: @page.path)
-      NoCms::Pages.block_layouts.each do |name, _|
-        @page.blocks.build layout: name
-      end
+      load_block_templates
     end
 
     def update
@@ -38,6 +36,7 @@ module NoCms::Admin::Pages
       else
         @nocms_logger.error(I18n.t('.no_cms.admin.pages.pages.update.error', title: @page.path))
         load_roots
+        load_block_templates
         render :edit
       end
     end
@@ -58,6 +57,12 @@ module NoCms::Admin::Pages
     end
 
     private
+
+    def load_block_templates
+      NoCms::Pages.block_layouts.each do |name, _|
+        @page.blocks.build layout: name, no_cms_admin_template: true
+      end
+    end
 
     def load_menu_section
       @current_section = 'pages'
