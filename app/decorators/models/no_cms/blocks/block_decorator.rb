@@ -1,3 +1,3 @@
-NoCms::Pages::Block.class_eval do
+NoCms::Blocks::Block.class_eval do
   attr_accessor :no_cms_admin_template
 end
