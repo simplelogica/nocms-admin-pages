@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "nocms-pages", git: 'https://github.com/simplelogica/nocms-pages.git', branch: 'master'
+gem "nocms-pages", git: 'https://github.com/simplelogica/nocms-pages.git', branch: 'features/migration-nocms-blocks'
+gem "nocms-blocks", git: 'https://github.com/simplelogica/nocms-blocks.git', branch: 'master'
 gem "nocms-admin", git: 'https://github.com/simplelogica/nocms-admin.git', branch: 'master'
 
 # Declare your gem's dependencies in pages.gemspec.
@@ -20,7 +21,7 @@ gemspec
 group :development, :test do
   gem 'faker'
   gem 'carrierwave' # For development and testing purposes (Images)
-  gem 'debugger'
+  # gem 'debugger'
 end
 
 group :test do
