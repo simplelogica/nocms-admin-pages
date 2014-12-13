@@ -52,12 +52,12 @@ describe NoCms::Admin::Pages do
     let(:block_title) { Faker::Lorem.sentence }
     let(:block_body) { Faker::Lorem.sentence }
 
-    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
+    let(:block_container) { create :block, layout: 'container_with_background' }
 
     subject { page }
 
     before do
-      block_container
+      nocms_page.blocks << block_container
       visit no_cms_admin_pages.edit_page_path(nocms_page)
     end
 

@@ -5,7 +5,7 @@ describe NoCms::Admin::Pages do
   context "when editing a page", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_default_layout) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:block_default_layout) { create :block, layout: 'default', title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
     let(:page_title) { Faker::Lorem.sentence }
     let(:block_title) { Faker::Lorem.sentence }
 
@@ -13,7 +13,7 @@ describe NoCms::Admin::Pages do
 
     before do
 
-      block_default_layout
+      nocms_page.blocks << block_default_layout
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 

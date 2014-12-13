@@ -5,13 +5,13 @@ describe NoCms::Admin::Pages do
   context "when removing blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_default_layout) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:block_default_layout) { create :block, layout: 'default', title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
 
     subject { page }
 
     before do
 
-      block_default_layout
+      nocms_page.blocks << block_default_layout
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 
@@ -34,14 +34,15 @@ describe NoCms::Admin::Pages do
   context "when removing nested blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
-    let(:block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
+    let(:block_container) { create :block, layout: 'container_with_background' }
+    let(:block_nested) { create :block, layout: 'logo-caption', caption: Faker::Lorem.sentence, parent: block_container }
 
     subject { page }
 
     before do
 
-      block_nested
+      nocms_page.blocks <<  block_container
+      nocms_page.blocks << block_nested
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 
@@ -63,14 +64,15 @@ describe NoCms::Admin::Pages do
   context "when removing parent of nested blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
-    let(:block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
+    let(:block_container) { create :block, layout: 'container_with_background' }
+    let(:block_nested) { create :block, layout: 'logo-caption', caption: Faker::Lorem.sentence, parent: block_container }
 
     subject { page }
 
     before do
 
-      block_nested
+      nocms_page.blocks << block_container
+      nocms_page.blocks << block_nested
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 

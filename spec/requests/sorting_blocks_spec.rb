@@ -5,14 +5,14 @@ describe NoCms::Admin::Pages do
   context "when sorting blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:first_block) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
-    let(:second_block) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:first_block) { create :block, layout: 'default', title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:second_block) { create :block, layout: 'default', title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
 
 
     before do
 
-      first_block
-      second_block
+      nocms_page.blocks << first_block
+      nocms_page.blocks << second_block
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 
@@ -59,14 +59,15 @@ describe NoCms::Admin::Pages do
   context "when sorting nested blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
-    let(:first_block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
-    let(:second_block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
+    let(:block_container) { create :block, layout: 'container_with_background' }
+    let(:first_block_nested) { create :block, layout: 'logo-caption', caption: Faker::Lorem.sentence, parent: block_container }
+    let(:second_block_nested) { create :block, layout: 'logo-caption', caption: Faker::Lorem.sentence, parent: block_container }
 
     before do
 
-      first_block_nested
-      second_block_nested
+      nocms_page.blocks << block_container
+      nocms_page.blocks << first_block_nested
+      nocms_page.blocks << second_block_nested
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 
