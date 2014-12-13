@@ -52,7 +52,7 @@ describe NoCms::Admin::Pages do
     let(:block_title) { Faker::Lorem.sentence }
     let(:block_body) { Faker::Lorem.sentence }
 
-    let(:block_container) { create :nocms_block, layout: 'container_with_background', page: nocms_page }
+    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
 
     subject { page }
 

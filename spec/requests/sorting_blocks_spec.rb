@@ -5,8 +5,8 @@ describe NoCms::Admin::Pages do
   context "when sorting blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:first_block) { create :nocms_block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
-    let(:second_block) { create :nocms_block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:first_block) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:second_block) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
 
 
     before do
@@ -59,9 +59,9 @@ describe NoCms::Admin::Pages do
   context "when sorting nested blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_container) { create :nocms_block, layout: 'container_with_background', page: nocms_page }
-    let(:first_block_nested) { create :nocms_block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
-    let(:second_block_nested) { create :nocms_block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
+    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
+    let(:first_block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
+    let(:second_block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
 
     before do
 

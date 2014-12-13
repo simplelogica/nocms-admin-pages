@@ -5,7 +5,7 @@ describe NoCms::Admin::Pages do
   context "when hiding a block", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block) { create :nocms_block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:block) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
 
 
     before do
@@ -34,8 +34,8 @@ describe NoCms::Admin::Pages do
   context "when hiding nested blocks", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_container) { create :nocms_block, layout: 'container_with_background', page: nocms_page }
-    let(:block_nested) { create :nocms_block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
+    let(:block_container) { create :block, layout: 'container_with_background', page: nocms_page }
+    let(:block_nested) { create :block, layout: 'logo-caption', page: nocms_page, caption: Faker::Lorem.sentence, parent: block_container }
 
     before do
 

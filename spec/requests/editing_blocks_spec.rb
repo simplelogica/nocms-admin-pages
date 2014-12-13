@@ -5,7 +5,7 @@ describe NoCms::Admin::Pages do
   context "when editing a page", js: true do
 
     let(:nocms_page) { create :nocms_page }
-    let(:block_default_layout) { create :nocms_block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
+    let(:block_default_layout) { create :block, layout: 'default', page: nocms_page, title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
     let(:block_title) { Faker::Lorem.sentence }
     let(:block_column) { Faker::Lorem.sentence }
 
