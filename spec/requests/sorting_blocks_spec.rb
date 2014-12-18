@@ -8,10 +8,6 @@ describe NoCms::Admin::Pages do
     let(:first_block) { create :block, layout: 'default', title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
     let(:second_block) { create :block, layout: 'default', title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph }
 
-    def no_cms_admin_pages
-      NoCms::Admin::Pages::Engine.routes.url_helpers
-    end
-
     before do
 
       nocms_page.blocks << first_block

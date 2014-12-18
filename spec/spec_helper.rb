@@ -75,6 +75,12 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+
+    def no_cms_admin_pages
+      NoCms::Admin::Pages::Engine.routes.url_helpers
+    end
+
+
 end
 
 # Now we define a shared connection so every activerecord object shares the connection and we can use transactions over phantomjs
