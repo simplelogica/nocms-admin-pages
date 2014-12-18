@@ -18,7 +18,7 @@ describe NoCms::Admin::Pages do
       if NoCms::Pages.use_body?
         fill_in I18n.t('activerecord.attributes.no_cms/pages/page.body'), with: page_body
       end
-      fill_in I18n.t('activerecord.attributes.no_cms/pages/page.slug'), with: page_slug
+      fill_in NoCms::Pages::Page.human_attribute_name(:slug), with: page_slug
 
       click_button(I18n.t('no_cms.admin.pages.pages.toolbar_right.submit_and_hide'))
     end
