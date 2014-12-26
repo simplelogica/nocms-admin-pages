@@ -59,7 +59,7 @@ module NoCms::Admin::Pages
     private
 
     def load_block_templates
-      NoCms::Pages.block_layouts.each do |name, _|
+      NoCms::Blocks.block_layouts.each do |name, _|
         @page.blocks.build layout: name, no_cms_admin_template: true
       end
     end
