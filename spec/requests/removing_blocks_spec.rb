@@ -43,6 +43,8 @@ describe NoCms::Admin::Pages do
 
       nocms_page.blocks <<  block_container
       nocms_page.blocks << block_nested
+      # Not sure why I have to load the caption now
+      block_nested.caption
 
       visit no_cms_admin_pages.edit_page_path(nocms_page)
 
