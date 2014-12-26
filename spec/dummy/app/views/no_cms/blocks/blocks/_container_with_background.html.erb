@@ -1,6 +1,6 @@
 <div class='background_block <%= block.corners_css_class %>' style="background-color: #<%= block.background_color %>">
   <p> Lorem! </p>
   <% block.children.no_drafts.sort_by(&:position).each do |child| %>
-  <%= render "no_cms/pages/blocks/#{child.template}", block: child %>
+  <%= render_block child %>
 <% end %>
 </div>
