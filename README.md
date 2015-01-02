@@ -25,7 +25,7 @@ i.e. for a block *article* whose template is named "normal_article", you must cr
   $PROJECT_DIR/app/views/no_cms/admin/pages/blocks/_normal_article.html.erb
 
 This template must print an input for each one of the fields declared for block *article* in [NoCMS blocks catalog](doc/nocms-block-catalog.rb). 
-As these fields are modelled as nested (common rails nested attributes), it's necessary to know de names and indexes of blocks where they are contained. To ease this task, templates always the *f variable*, a form builder, so you only have to provide the name of the field and forget about nesting.
+As these fields are modelled as nested (common rails nested attributes), it's necessary to know the names and indexes of blocks where they are contained. To ease this task, templates always the *f variable*, a form builder, so you only have to provide the name of the field and forget about nesting.
 
 In this example we show the case for a block with two fields: title and body, and the use of *f variable* to build the form with correct nesting:
 
