@@ -9,7 +9,7 @@ Custom admin for NoCMS pages gem
 To use this admin interface for NoCMS you must include this repository in your Gemfile.
 
 ```ruby
-gem "nocms-admin-pages", git: 'git@github.com:simplelogica/nocms-pages-admin.git'
+gem "nocms-admin-pages", git: 'git@github.com:simplelogica/nocms-admin-pages.git'
 ```
 
 ### 2. Create block templates
